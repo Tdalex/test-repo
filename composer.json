@@ -1,0 +1,10 @@
+{
+    "name": "tanguy/test-repo",
+    "authors": [
+        {
+            "name": "Dalex Tanguy",
+            "email": "dalex.tanguy@gmail.com"
+        }
+    ],
+    "require": {}
+}
