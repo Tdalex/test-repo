@@ -28,8 +28,8 @@ jobs:
 
       install:
         - composer install
-        - php security-checker.phar security:check composer.lock
         - php php-cs-fixer-v2.phar fix . --rules=@Symfony
+        - php security-checker.phar security:check composer.lock
     
 
     - stage: test
