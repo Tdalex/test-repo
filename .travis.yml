@@ -25,8 +25,8 @@ jobs:
         - composer validate --no-check-publish
 
       script:
-        - php php-cs-fixer-v2.phar fix . --rules=@Symfony
-        - php bin/console security:check
+        - docker run --rm -v $PWD:/app phpqa/phpcs
+        - docker run --rm -v $PWD:/app phpqa/security-checker security:check
     
 
     - stage: test
@@ -40,8 +40,8 @@ jobs:
         - composer validate --no-check-publish
 
       script:
-        - php php-cs-fixer-v2.phar fix . --rules=@Symfony
-        - php bin/console security:check
+        - docker run --rm -v $PWD:/app phpqa/phpcs
+        - docker run --rm -v $PWD:/app phpqa/security-checker security:check
 
 
 deploy:
