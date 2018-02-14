@@ -1,22 +1,19 @@
-
 sudo: false
-
 language: php
-
 php: 7.2
-
-# cache composer downloads so installing is quicker
 cache:
   yarn: true
   directories:
-    - $HOME/.composer/cache
-    
+  - "$HOME/.composer/cache"
 notifications:
   email:
     on_success: never
     on_failure: always
-    
 install:
-    - composer install
-    - php security-checker.phar security:check composer.lock
-    - php php-cs-fixer-v2.phar fix . --rules=@Symfony
+- composer install
+- php security-checker.phar security:check composer.lock
+- php php-cs-fixer-v2.phar fix . --rules=@Symfony
+deploy:
+  provider: heroku
+  api_key:
+    secure: VrSbmPLB1XY4qqcmyIV4dvoi1PgGeMFPIOujlm70QOOsJApGJb1/ih1xjifN3saPS1rrrXGN29I18o3CdkSJEZCNtyLaUKl0AX7L/OgatjFPmKZosO37cUCwCvKfxYCBZ0f/w7bbbSIqNOEhpWeqzhoxfm7jTxBV9s/oMbJxUQXgx+cLaSJRim6grZ2CtHQ189w2HGtbEGWk07PrP8sZjlIOOFuLXtkzy2lmOUMBACjoJrxIp7UJIQ5L23Ecnr+SE06o+g0unM47DI5GZTuT1MpnVQXig2jIupETtcqrEczsUFZuWc+FevrfEwyYwOhEUllwN85MirLOryMfNpzc03FeRg8Ik0ace7PFw8iaJx9qz1jGMzqv/BvAyj2uybGtc5C27fd02uuHWDgGZivTkD5rKTGwYLby9n9wCLyuak00iJxtRCEzVC/mKbTnE3BPzCQwwBJlK91RGiUu51AWUrq/1XKIWhjIZJm/MiT9IZW/IKdaJ2y9bv/eYZmGo9QZZViSjKhMayn8gC1DypeWBhN7wzNWsHc1Ss/yVA49XIikKGjPWEPyewSJOuC/sXRiGwjenNytFhzmPr2uuyssepndcilSFToR6+XVXOrYNz6EYj4JmSp2Vg00aDVxzcMiizpAx2bytU5xLYr+H/Hdo8vmA+h+Yc+9hveJD5AQax0=
