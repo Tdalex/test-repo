@@ -25,7 +25,7 @@ jobs:
         - composer validate --no-check-publish
 
       script:
-        - docker run --rm -v $PWD:/app phpqa/phpcs
+        - php php-cs-fixer-v2.phar fix . --rules=@Symfony
         - docker run --rm -v $PWD:/app phpqa/security-checker security:check
     
 
