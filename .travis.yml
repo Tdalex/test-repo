@@ -11,6 +11,8 @@ cache:
   directories:
     - $HOME/.composer/cache
 
+script: phpunit --configuration phpunit_$DB.xml --coverage-text
+    
 notifications:
   email:
     on_success: change
