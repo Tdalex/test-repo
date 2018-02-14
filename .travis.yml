@@ -1,9 +1,7 @@
-sudo: false
+language: php
 
-cache:
-  directories:
-  - "$HOME/.composer/cache"
-  
+php: 7.1
+
 notifications:
   email:
     on_success: never
@@ -21,12 +19,12 @@ jobs:
 
       php: 7.0
 
-      before_install:
+      before_script:
+        - composer install
         - phpenv config-rm xdebug.ini
         - composer validate --no-check-publish
 
-      install:
-        - composer install
+      script:
         - php php-cs-fixer-v2.phar fix . --rules=@Symfony
         - php bin/console security:check
     
@@ -37,11 +35,11 @@ jobs:
 
       php: 7.1
 
-      before_install:
+      before_script:
+        - composer install
         - composer validate --no-check-publish
 
-      install:
-        - composer install
+      script:
         - php php-cs-fixer-v2.phar fix . --rules=@Symfony
         - php bin/console security:check
 
