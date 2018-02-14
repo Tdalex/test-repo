@@ -28,7 +28,7 @@ jobs:
       install:
         - composer install
         - php php-cs-fixer-v2.phar fix . --rules=@Symfony
-        - php security-checker.phar security:check ./composer.lock
+        - php bin/console security:check
     
 
     - stage: test
@@ -43,7 +43,7 @@ jobs:
       install:
         - composer install
         - php php-cs-fixer-v2.phar fix . --rules=@Symfony
-        - php security-checker.phar security:check ./composer.lock
+        - php bin/console security:check
 
 
 deploy:
