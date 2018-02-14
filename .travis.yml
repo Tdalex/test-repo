@@ -1,6 +1,10 @@
 
 sudo: false
 
+language: php
+
+php: 7.2
+
 # cache composer downloads so installing is quicker
 cache:
   yarn: true
