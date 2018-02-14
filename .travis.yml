@@ -18,16 +18,6 @@ stages:
   - asset
 
 jobs:
-  include:
-    - stage: Style
-
-      language: php
-
-      php: 7.1
-
-      install:
-        - composer install
-        
     - stage: Style
 
       language: php
