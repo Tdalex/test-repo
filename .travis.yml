@@ -13,27 +13,10 @@ cache:
     
 notifications:
   email:
-    on_success: change
+    on_success: never
     on_failure: always
     
-stages:
-  - style
-  - test
-  - asset
-
-jobs:
-    - stage: Style
-
-      language: php
-
-      php: 7.2
-
-      matrix:
-        allow_failures:
-            - script: phpunit --configuration phpunit_$DB.xml --coverage-text
-    
-
-      install:
-        - composer install
-        - php security-checker.phar security:check composer.lock
-        - php php-cs-fixer-v2.phar fix . --rules=@Symfony
+install:
+    - composer install
+    - php security-checker.phar security:check composer.lock
+    - php php-cs-fixer-v2.phar fix . --rules=@Symfony
