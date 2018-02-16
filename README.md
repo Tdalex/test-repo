@@ -1,4 +1,5 @@
-https://travis-ci.org/Tdalex/test-repo.svg?branch=master
+[![Build Status](https://travis-ci.org/Tdalex/test-repo.svg?branch=master)](https://travis-ci.org/Tdalex/test-repo)
+
 
 Symfony Standard Edition
 ========================
