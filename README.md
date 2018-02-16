@@ -1,3 +1,5 @@
+https://travis-ci.org/Tdalex/test-repo.svg?branch=master
+
 Symfony Standard Edition
 ========================
 

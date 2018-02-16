@@ -27,6 +27,7 @@ jobs:
       script:
         - php php-cs-fixer-v2.phar fix . --rules=@Symfony
         - docker run --rm -v $PWD:/app phpqa/security-checker security:check
+        - phpunit
     
 
     - stage: test
@@ -42,6 +43,7 @@ jobs:
       script:
         - php php-cs-fixer-v2.phar fix . --rules=@Symfony
         - docker run --rm -v $PWD:/app phpqa/security-checker security:check
+        - phpunit
     
 
 
